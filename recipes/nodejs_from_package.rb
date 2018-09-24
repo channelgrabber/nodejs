@@ -31,5 +31,7 @@ unless node['nodejs']['packages']
 end
 
 node['nodejs']['packages'].each do |node_pkg|
-  package node_pkg
+  package node_pkg do
+    action :upgrade
+  end
 end
